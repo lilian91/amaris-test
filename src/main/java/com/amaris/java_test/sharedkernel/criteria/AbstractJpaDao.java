@@ -32,7 +32,7 @@ public abstract class AbstractJpaDao<T extends Serializable> {
                 where += " id = :" + field.getName();
         }
         Query query = entityManager.createQuery(hql + where);
-        // Seting parameters to query by the values in object
+        // Setting parameters to query by the values in object
         for (Field field : fields) {
             field.setAccessible(true);
             if (field.getName().equals("id"))
